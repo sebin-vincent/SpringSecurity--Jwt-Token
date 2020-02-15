@@ -23,7 +23,7 @@ public class JWTUtil {
 
     private String createToken(Map<String, Object> claims, String subject) {
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis()+1000*30)).signWith(SignatureAlgorithm.HS256,SECRET_KEY)
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 30 * 10)).signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
 
     }
